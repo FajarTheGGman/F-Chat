@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="http://localhost:7000/icon">
+    <title>F-Chat</title>
+</head>
+
+<style>
+#title{
+    font: 35px sans-serif;
+    color: black;
+    text-decoration: underline;
+}
+
+#name{
+    background: black;
+    color: white;
+    border: white;
+    padding: 10px;
+}
+
+#a{
+    border: 2px black solid;
+    padding: 5px;
+    margin-top: 1%;
+    position: ;
+}
+
+#a h1{
+    font: 25px sans-serif;
+}
+
+form{
+    margin-top: 1%;
+}
+
+#chat-user{
+    width: 50%;
+    padding: 20px;
+    border: 2px black solid;
+}
+
+#btn{
+    padding: 20px;
+    border: none;
+    background: black;
+    color:white;
+    margin-left: 0.5%;
+}
+
+</style>
+
+<body>
+    <center>
+        <h1 id="title">F-Chat</h1>
+    </center>
+    <input type="text" id="name" placeholder="Your Name ?">
+    <div id="a">
+
+    </div>
+    <center>
+        <form action="">
+            <input type="text" id="chat-user" autocomplete="off"><button type="submit" id="btn">kirim</button>
+        </form>
+    </center>
+    <script src="http://localhost:7000/jquery"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    var x = io()
+
+    $("form").submit(() => {
+        x.emit("pesan", $("#name").val() + " : " + $("#chat-user").val())
+        $("#chat-user").val('')
+        return false;
+    })
+
+    x.on('pesan', (msg) => {
+      $("#a").append($("<h1>").text(msg))
+    })
+    </script>
+</body>
+</html>
