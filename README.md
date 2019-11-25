@@ -1,5 +1,5 @@
 # F-Chat
-![](https://img.shileds.io/badge/Version-1.0-blue) ![](https://img.shileds.io/badge/Language-NodeJS-lime)
+![](https://img.shields.io/badge/Version-1.0-red) ![](https://img.shields.io/badge/Nodejs-v10.16.0-lime) 
 
 #Simple Chatting Application Build in nodejs
 
