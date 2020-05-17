@@ -27,3 +27,6 @@ Linux
 <pre>
 Just Type : node index.js
 </pre>
+
+# Support Me :)
+![donate](https://raw.githubusercontent.com/FajarTheGGman/F-Tools/master/.images/donate.jpeg)
